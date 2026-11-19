@@ -25,6 +25,21 @@ funktioniert im Browser, in Electron und in den Capacitor-WebViews identisch). �
 - 🔄 **Sync zwischen Geräten** (Last-Write-Wins pro Aufgabe/Liste, Tombstones für Löschungen)
 - 📱 PWA: im Browser installierbar (App-Icon, offline-fähig via Service Worker)
 
+## Screenshots
+
+Echte Screenshots der laufenden App (Headless Chromium, siehe `tools/screenshot.mjs`):
+
+| Desktop – Mein Tag (hell) | Desktop – Aufgaben-Detail |
+|---|---|
+| ![Desktop Mein Tag](docs/screenshots/desktop-myday.png) | ![Desktop Detail](docs/screenshots/desktop-detail.png) |
+
+| Desktop – Alle Aufgaben (dunkel, mit Erledigt) | Mobile – Mein Tag (390 px) |
+|---|---|
+| ![Desktop dunkel](docs/screenshots/desktop-dark.png) | ![Mobile](docs/screenshots/mobile-myday.png) |
+
+Neu erzeugen: `npm run build && npx vite preview --port 4818 &` dann `npm run screenshots`
+(env `BASE_URL` überschreibt die Ziel-URL).
+
 ## Schnellstart
 
 ```bash
