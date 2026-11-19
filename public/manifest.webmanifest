@@ -1,0 +1,17 @@
+{
+  "name": "Vibe To Do",
+  "short_name": "To Do",
+  "description": "Aufgaben verwalten – im Browser, auf Windows, Android und iOS",
+  "lang": "de",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#1b1b1b",
+  "theme_color": "#0078d4",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

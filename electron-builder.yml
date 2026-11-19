@@ -1,0 +1,23 @@
+appId: dev.vibe.todo
+directories:
+  output: release
+files:
+  - dist/**/*
+  - electron/**/*
+  - package.json
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+  icon: public/icon-512.png
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  shortcutName: Vibe To Do
+mac:
+  target:
+    - dmg
+linux:
+  target:
+    - AppImage
