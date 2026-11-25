@@ -111,6 +111,18 @@ In der App unter **⚙️ Einstellungen → Sync-Server** die URL eintragen (z. 
 - `GET /api/state?since=<ISO>` → Änderungen seit Zeitstempel
 - `POST /api/state` `{ lists, tasks }` → LWW-Merge
 
+### 💬 Mistral-Chat (minimale Web-App in `chat/`)
+
+```bash
+npm install                        # installiert u. a. @mistralai/mistralai (offizielles TypeScript-SDK)
+export MISTRAL_API_KEY="..."       # Key nur serverseitig als Umgebungsvariable (nie committen)
+npm run chat                       # http://127.0.0.1:4174 – Chat-UI im Browser öffnen
+```
+
+Der Server (`chat/server.js`) ruft die Mistral-API mit `mistral-small-latest` auf und liefert die
+statische Chat-Seite (`chat/index.html`) aus – `MISTRAL_API_KEY` bleibt dabei auf dem Server.
+Alle Befehle (inkl. Windows-Varianten): [chat/README.md](chat/README.md).
+
 ## Architektur
 
 ```
@@ -143,6 +155,7 @@ In der App unter **⚙️ Einstellungen → Sync-Server** die URL eintragen (z. 
 ├── electron-builder.yml NSIS-Installer-Konfiguration (Windows)
 ├── public/              PWA: manifest.webmanifest, sw.js, favicon.svg, icon-*.png
 ├── server/              sync-server.js (dependency-frei, JSON-Datei)
+├─ chat/                minimale Mistral-Chat-Web-App (server.js + index.html, SDK @mistralai/mistralai)
 ├── shared/merge.mjs     Sync-Merge (Client + Server)
 ├── src/
 │   ├── model/types.ts   Datenmodell
@@ -150,7 +163,7 @@ In der App unter **⚙️ Einstellungen → Sync-Server** die URL eintragen (z. 
 │   ├── sync/sync.ts     Sync-Client
 │   ├── components/      Sidebar, TaskView, TaskDetail, Settings
 │   └── util/format.ts   Datumsformatierung (de-DE)
-├── tests/               vitest: merge, store (fake-indexeddb), sync-server (Loopback)
+├── tests/               vitest: merge, store (fake-indexeddb), sync-server, chat-server (Stub, Loopback)
 └── tools/make-icons.py  App-Icons ohne externe Abhängigkeiten neu generieren
 ```
 
