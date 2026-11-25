@@ -12,6 +12,7 @@
     "preview": "vite preview",
     "test": "vitest run",
     "sync-server": "node server/sync-server.js",
+    "chat": "node chat/server.js",
     "icons": "python3 tools/make-icons.py",
     "screenshots": "node tools/screenshot.mjs",
     "cap:add:android": "npx cap add android",
@@ -23,6 +24,7 @@
     "electron:dist": "npm run build && electron-builder --config electron-builder.yml --win"
   },
   "dependencies": {
+    "@mistralai/mistralai": "^3.5.0",
     "idb": "^8.0.3",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
